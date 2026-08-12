@@ -2,7 +2,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Crear usuario"
-            subtitle="Alta manual de usuarios para operacion del CRM. Define rol, supervisor y estado desde el primer momento."
+            subtitle="Alta manual de usuarios para operación del CRM. Define rol, supervisor y estado desde el primer momento."
         />
 
         <form method="POST" action="{{ route('users.store') }}" style="display: grid; gap: 20px;">
