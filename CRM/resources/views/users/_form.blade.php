@@ -17,7 +17,7 @@
             </div>
 
             <div class="field">
-                <label for="email">Email</label>
+                <label for="email">Correo electrónico</label>
                 <input id="email" name="email" type="email" value="{{ old('email', $editing ? $userModel->email : '') }}" placeholder="correo@empresa.com">
                 @error('email')
                     <div class="meta" style="color: var(--danger);">{{ $message }}</div>
@@ -49,7 +49,7 @@
                         <option value="{{ $supervisor->id }}" @selected($selectedSupervisor === $supervisor->id)>{{ $supervisor->name }}</option>
                     @endforeach
                 </select>
-                <div class="meta">Obligatorio para agentes. Supervisores y super admin pueden quedar sin supervisor.</div>
+                <div class="meta">Obligatorio para agentes. Supervisores y superadmin pueden quedar sin supervisor.</div>
                 @error('supervisor_id')
                     <div class="meta" style="color: var(--danger);">{{ $message }}</div>
                 @enderror
@@ -59,19 +59,19 @@
 
     @if (! $editing)
         <div style="display: grid; gap: 12px;">
-            <span class="badge">Contrasena inicial</span>
+            <span class="badge">Contraseña inicial</span>
             <div class="grid">
                 <div class="field">
-                    <label for="password">Contrasena</label>
-                    <input id="password" name="password" type="password" placeholder="Contrasena segura">
+                    <label for="password">Contraseña</label>
+                    <input id="password" name="password" type="password" placeholder="Contraseña segura">
                     @error('password')
                         <div class="meta" style="color: var(--danger);">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="field">
-                    <label for="password_confirmation">Confirmar contrasena</label>
-                    <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Repite la contrasena">
+                    <label for="password_confirmation">Confirmar contraseña</label>
+                    <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Repite la contraseña">
                 </div>
             </div>
         </div>
@@ -82,12 +82,12 @@
             <input type="checkbox" name="is_active" value="1" @checked(old('is_active', $editing ? $userModel->is_active : true)) style="width: auto; margin: 0;">
             <span>Usuario activo</span>
         </label>
-        <div class="meta" style="margin-top: 8px;">Los usuarios inactivos no podran iniciar sesion ni operar leads.</div>
+        <div class="meta" style="margin-top: 8px;">Los usuarios inactivos no podrán iniciar sesión ni operar leads.</div>
     </div>
 </div>
 
 <div class="actions">
-    <span class="meta">Verifica rol, supervisor y estado antes de guardar para evitar inconsistencias en visibilidad y operacion.</span>
+    <span class="meta">Verifica rol, supervisor y estado antes de guardar para evitar inconsistencias en visibilidad y operación.</span>
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
         <a href="{{ route('users.index') }}" style="display: inline-flex; align-items: center; color: var(--muted); text-decoration: none;">Volver a usuarios</a>
         <button class="button" type="submit">{{ $buttonLabel }}</button>
