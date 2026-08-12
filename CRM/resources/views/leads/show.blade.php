@@ -311,10 +311,24 @@
                 subtitle="Secuencia completa de cambios, llamadas, resultados y acciones asociadas al lead."
             />
             <div style="display: grid; gap: 12px;">
+                @php
+                    $actionLabels = [
+                        'Asignacion actualizada' => 'Asignación actualizada',
+                        'Asignacion' => 'Asignación',
+                        'Creacion de lead' => 'Creación de lead',
+                        'Registro de llamada' => 'Registro de llamada',
+                        'Interaccion registrada' => 'Interacción registrada',
+                        'Cambio de estado' => 'Cambio de estado',
+                        'Recordatorio creado' => 'Recordatorio creado',
+                        'Recordatorio completado' => 'Recordatorio completado',
+                        'Nota añadida' => 'Nota añadida',
+                    ];
+                @endphp
+
                 @forelse ($lead->logs as $log)
                     <div class="surface" style="padding: 14px 16px;">
                         <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; flex-wrap: wrap;">
-                            <strong>{{ $log->action }}</strong>
+                            <strong>{{ $actionLabels[$log->action] ?? $log->action }}</strong>
                             <span class="meta">{{ $log->created_at?->format('Y-m-d H:i') ?: 'Sin fecha' }}</span>
                         </div>
                         <div class="meta" style="margin-bottom: 4px;">Usuario: {{ optional($log->user)->name ?: 'Sistema' }}</div>
