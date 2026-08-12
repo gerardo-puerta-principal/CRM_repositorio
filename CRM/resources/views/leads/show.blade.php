@@ -5,7 +5,7 @@
             subtitle="Gestion operativa del lead con cambio de estado, llamadas, recordatorios e historial consolidado."
         >
             <x-slot:actions>
-                <x-ui.badge>{{ $lead->status }}</x-ui.badge>
+                <x-ui.badge>{{ config('crm.labels.statuses')[$lead->status] ?? $lead->status }}</x-ui.badge>
                 @if (request()->user()?->isSuperAdmin())
                     <form
                         method="POST"
@@ -53,7 +53,7 @@
             </div>
             <div class="surface" style="padding: 16px 18px;">
                 <strong>Estado actual</strong>
-                <div class="meta" style="margin-top: 8px;">{{ $lead->status }}</div>
+                <div class="meta" style="margin-top: 8px;">{{ config('crm.labels.statuses')[$lead->status] ?? $lead->status }}</div>
             </div>
             <div class="surface" style="padding: 16px 18px;">
                 <strong>Capturo</strong>
@@ -129,7 +129,7 @@
                     <label for="status">Nuevo estado</label>
                     <select id="status" name="status">
                         @foreach ($statuses as $status)
-                            <option value="{{ $status }}" @selected(old('status', $lead->status) === $status)>{{ $status }}</option>
+                            <option value="{{ $status }}" @selected(old('status', $lead->status) === $status)>{{ config('crm.labels.statuses')[$status] ?? $status }}</option>
                         @endforeach
                     </select>
                     @error('status')
@@ -162,7 +162,7 @@
                     <select id="result" name="result">
                         <option value="">Selecciona un resultado</option>
                         @foreach ($interactionResults as $result)
-                            <option value="{{ $result }}" @selected(old('result') === $result)>{{ $result }}</option>
+                            <option value="{{ $result }}" @selected(old('result') === $result)>{{ config('crm.labels.results')[$result] ?? $result }}</option>
                         @endforeach
                     </select>
                     @error('result')
@@ -333,11 +333,11 @@
                         </div>
                         <div class="meta" style="margin-bottom: 4px;">Usuario: {{ optional($log->user)->name ?: 'Sistema' }}</div>
                         @if ($log->result)
-                            <div class="meta" style="margin-bottom: 4px;">Resultado: {{ $log->result }}</div>
+                            <div class="meta" style="margin-bottom: 4px;">Resultado: {{ config('crm.labels.results')[$log->result] ?? $log->result }}</div>
                         @endif
                         @if ($log->from_status || $log->to_status)
                             <div class="meta" style="margin-bottom: 4px;">
-                                Estado: {{ $log->from_status ?: 'N/A' }} -> {{ $log->to_status ?: 'N/A' }}
+                                Estado: {{ $log->from_status ? (config('crm.labels.statuses')[$log->from_status] ?? $log->from_status) : 'N/A' }} -> {{ $log->to_status ? (config('crm.labels.statuses')[$log->to_status] ?? $log->to_status) : 'N/A' }}
                             </div>
                         @endif
                         @if ($log->note)
