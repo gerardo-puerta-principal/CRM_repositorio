@@ -40,4 +40,26 @@ return [
         'No interesado',
         'Seguimiento',
     ],
+    'labels' => [
+        'statuses' => [
+            'Nuevo' => 'Nuevo',
+            'Por llamar' => 'Por llamar',
+            'No contesta' => 'No contesta',
+            'Contactado' => 'Contactado',
+            'Interesado' => 'Interesado',
+            'Cita agendada' => 'Cita agendada',
+            'Cerrado' => 'Cerrado',
+            'Perdido' => 'Perdido',
+        ],
+        'results' => [
+            'Llamada realizada' => 'Llamada realizada',
+            'No contesta' => 'No contesta',
+            'Buzon' => 'Buzón',
+            'Whatsapp enviado' => 'WhatsApp enviado',
+            'Correo enviado' => 'Correo enviado',
+            'Interesado' => 'Interesado',
+            'No interesado' => 'No interesado',
+            'Seguimiento' => 'Seguimiento',
+        ],
+    ],
 ];
