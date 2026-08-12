@@ -1,7 +1,7 @@
-<x-layouts.app title="Metricas">
+<x-layouts.app title="Métricas">
     <x-ui.card>
         <x-ui.page-header
-            title="Metricas operativas"
+            title="Métricas operativas"
             subtitle="Control real del equipo por agente, con actividad del periodo, avance actual del pipeline y recordatorios operativos vencidos."
         >
             <x-slot:actions>
@@ -40,7 +40,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Resumen actual del pipeline visible"
-            subtitle="Vista rapida del inventario visible para el rol autenticado y el periodo seleccionado."
+            subtitle="Vista rápida del inventario visible para el rol autenticado y el periodo seleccionado."
         />
         <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
             @foreach ($statusRows as $row)
@@ -107,7 +107,7 @@
                         <tr>
                             <td colspan="7" style="padding: 0;">
                                 <x-ui.empty-state
-                                    title="No hay agentes activos para mostrar en el periodo actual"
+                                    title="No hay agentes activos para mostrar en el período actual"
                                     description="Crea agentes, actívalos o ajusta el rango para comenzar a ver actividad operativa."
                                 />
                             </td>
@@ -115,6 +115,19 @@
                     @endforelse
                 </tbody>
             </table>
+        </div>
+    </x-ui.card>
+
+    <div style="height: 16px;"></div>
+
+    <x-ui.card>
+        <x-ui.page-header
+            title="Resumen de resultados"
+            subtitle="Resultados por agente y por estado para el periodo seleccionado."
+        />
+
+        <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 20px; background: var(--panel);">
+            <!-- Detalles agregados si es necesario -->
         </div>
     </x-ui.card>
 </x-layouts.app>
