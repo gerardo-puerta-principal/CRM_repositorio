@@ -2,13 +2,13 @@
     <x-ui.card>
         <x-ui.page-header
             title="Editar usuario"
-            subtitle="Gestion de rol, supervisor, estado y seguridad basica para la cuenta seleccionada."
+            subtitle="Gestión de rol, supervisor, estado y seguridad básica para la cuenta seleccionada."
         >
             <x-slot:actions>
                 @if (auth()->id() !== $userModel->id && $userModel->role !== \App\Models\User::ROLE_SUPER_ADMIN && $userModel->is_active)
                     <form method="POST" action="{{ route('users.impersonate', $userModel) }}">
                         @csrf
-                        <button class="button" type="submit">Entrar a cuenta</button>
+                        <button class="button" type="submit">Entrar a la cuenta</button>
                     </form>
                 @endif
             </x-slot:actions>
@@ -29,7 +29,7 @@
 
     <x-ui.card>
         <x-ui.page-header
-            title="Reset manual de contrasena"
+            title="Reset manual de contraseña"
             subtitle="Actualiza credenciales cuando el usuario no pueda acceder o requiera un nuevo inicio seguro."
         />
 
@@ -37,20 +37,20 @@
             @csrf
             <div class="grid">
                 <div class="field">
-                    <label for="password">Nueva contrasena</label>
-                    <input id="password" name="password" type="password" placeholder="Nueva contrasena">
+                    <label for="password">Nueva contraseña</label>
+                    <input id="password" name="password" type="password" placeholder="Nueva contraseña">
                     @error('password')
                         <div class="meta" style="color: var(--danger);">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="field">
-                    <label for="password_confirmation">Confirmar contrasena</label>
-                    <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirmar contrasena">
+                    <label for="password_confirmation">Confirmar contraseña</label>
+                    <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirmar contraseña">
                 </div>
             </div>
             <div class="actions">
-                <span class="meta">Comparte la nueva contrasena por un canal seguro y solicita cambio posterior si aplica.</span>
-                <button class="button" type="submit">Actualizar contrasena</button>
+                <span class="meta">Comparte la nueva contraseña por un canal seguro y solicita cambio posterior si aplica.</span>
+                <button class="button" type="submit">Actualizar contraseña</button>
             </div>
         </form>
     </x-ui.card>
