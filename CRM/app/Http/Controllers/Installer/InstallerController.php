@@ -26,6 +26,6 @@ class InstallerController extends Controller
 
         return redirect()
             ->route('login')
-            ->with('status', 'Instalacion completada. Ya puedes iniciar sesion con tu cuenta de Super Admin.');
+            ->with('status', 'Instalación completada. Ya puedes iniciar sesión con tu cuenta de Super Admin.');
     }
 }
