@@ -98,7 +98,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.edit', $user)
-            ->with('status', 'Contrasena actualizada correctamente.');
+            ->with('status', 'Contraseña actualizada correctamente.');
     }
 
     public function impersonate(Request $request, User $user)
@@ -124,7 +124,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('dashboard')
-            ->with('status', 'Ahora estas dentro de la cuenta de '.$user->name.'.');
+            ->with('status', 'Ahora estás dentro de la cuenta de '.$user->name.'.');
     }
 
     public function leaveImpersonation(Request $request)
@@ -143,7 +143,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('status', 'Sesion original restaurada correctamente.');
+            ->with('status', 'Sesión original restaurada correctamente.');
     }
 
     private function validateUser(Request $request, ?User $user, bool $creating): array
