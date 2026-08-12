@@ -162,7 +162,7 @@ class LeadController extends Controller
 
         return redirect()
             ->route('leads.show', $lead)
-            ->with('status', 'Interaccion registrada correctamente.');
+            ->with('status', 'Interacción registrada correctamente.');
     }
 
     public function assign(Request $request, Lead $lead)
@@ -196,7 +196,7 @@ class LeadController extends Controller
 
         return redirect()
             ->route('leads.show', $lead)
-            ->with('status', 'Asignacion actualizada correctamente.');
+            ->with('status', 'Asignación actualizada correctamente.');
     }
 
     public function roundRobin(Request $request)
@@ -245,7 +245,7 @@ class LeadController extends Controller
                 ]);
 
                 $this->createLeadLog($lead, $user->id, 'Asignado por round robin', [
-                    'note' => 'Lead asignado automaticamente a '.$agent->name.'.',
+                    'note' => 'Lead asignado automáticamente a '.$agent->name.'.',
                     'to_status' => $lead->status,
                     'meta_json' => [
                         'assigned_user' => $agent->name,
