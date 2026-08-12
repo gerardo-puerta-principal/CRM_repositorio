@@ -2,7 +2,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Alta manual de lead"
-            subtitle="Captura rapida con validacion minima. Basta con nombre o telefono para generar un nuevo lead operativo."
+            subtitle="Captura rápida con validación mínima. Basta con nombre o teléfono para generar un nuevo lead operativo."
         >
             <x-slot:actions>
                 <x-ui.button :href="route('leads.index')" variant="link">Volver al listado</x-ui.button>
@@ -24,15 +24,15 @@
                     </div>
 
                     <div class="field">
-                        <label for="phone">Telefono</label>
-                        <input id="phone" name="phone" type="text" value="{{ old('phone') }}" placeholder="Telefono principal">
+                        <label for="phone">Teléfono</label>
+                        <input id="phone" name="phone" type="text" value="{{ old('phone') }}" placeholder="Teléfono principal">
                         @error('phone')
                             <div class="meta" style="color: var(--danger);">{{ $message }}</div>
                         @enderror
                     </div>
 
                     <div class="field">
-                        <label for="email">Email</label>
+                        <label for="email">Correo electrónico</label>
                         <input id="email" name="email" type="email" value="{{ old('email') }}" placeholder="correo@cliente.com">
                         @error('email')
                             <div class="meta" style="color: var(--danger);">{{ $message }}</div>
@@ -54,7 +54,7 @@
                 <div class="grid">
                     <div class="field">
                         <label for="type">Tipo</label>
-                        <input id="type" name="type" type="text" value="{{ old('type') }}" placeholder="Casa, departamento, inversion...">
+                        <input id="type" name="type" type="text" value="{{ old('type') }}" placeholder="Casa, departamento, inversión...">
                         @error('type')
                             <div class="meta" style="color: var(--danger);">{{ $message }}</div>
                         @enderror
@@ -85,12 +85,12 @@
 
             <div class="surface" style="padding: 16px 18px;">
                 <div class="meta">
-                    Recomendacion: captura al menos <strong>nombre</strong> o <strong>telefono</strong>. Los demas campos pueden completarse durante el seguimiento.
+                    Recomendación: captura al menos <strong>nombre</strong> o <strong>teléfono</strong>. Los demás campos pueden completarse durante el seguimiento.
                 </div>
             </div>
 
             <div class="actions">
-                <span class="meta">El lead quedara disponible inmediatamente para seguimiento, asignacion y metricas.</span>
+                <span class="meta">El lead quedará disponible inmediatamente para seguimiento, asignación y métricas.</span>
                 <button class="button" type="submit">Guardar lead</button>
             </div>
         </form>
