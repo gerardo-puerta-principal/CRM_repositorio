@@ -2,7 +2,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Usuarios"
-            subtitle="Administracion simple de cuentas, roles, supervisores y acceso operativo del equipo."
+            subtitle="Administración simple de cuentas, roles, supervisores y acceso operativo del equipo."
         >
             <x-slot:actions>
                 <x-ui.badge>{{ $users->count() }} usuarios</x-ui.badge>
@@ -22,7 +22,7 @@
                         <th style="padding: 14px 16px;">Rol</th>
                         <th style="padding: 14px 16px;">Supervisor</th>
                         <th style="padding: 14px 16px;">Estado</th>
-                        <th style="padding: 14px 16px;">Ultimo acceso</th>
+                        <th style="padding: 14px 16px;">Último acceso</th>
                         <th style="padding: 14px 16px;">Acciones</th>
                     </tr>
                 </thead>
