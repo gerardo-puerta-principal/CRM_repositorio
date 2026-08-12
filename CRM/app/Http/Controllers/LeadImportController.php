@@ -33,7 +33,7 @@ class LeadImportController extends Controller
 
         return redirect()
             ->route('leads.import.create')
-            ->with('status', 'Archivo analizado correctamente. Revisa el mapeo sugerido y confirma la importacion.');
+            ->with('status', 'Archivo analizado correctamente. Revisa el mapeo sugerido y confirma la importación.');
     }
 
     public function store(LeadImportConfirmRequest $request, LeadImportService $leadImportService)
@@ -43,7 +43,7 @@ class LeadImportController extends Controller
         if (! is_array($preview)) {
             return redirect()
                 ->route('leads.import.create')
-                ->withErrors(['file' => 'No hay una importacion pendiente para confirmar.']);
+                ->withErrors(['file' => 'No hay una importación pendiente para confirmar.']);
         }
 
         try {
@@ -62,6 +62,6 @@ class LeadImportController extends Controller
 
         return redirect()
             ->route('leads.index')
-            ->with('status', 'Importacion completada. Importados: '.$result['imported'].' | Omitidos: '.$result['skipped'].'.');
+            ->with('status', 'Importación completada. Importados: '.$result['imported'].' | Omitidos: '.$result['skipped'].'.');
     }
 }
