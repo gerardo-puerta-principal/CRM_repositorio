@@ -18,7 +18,7 @@
                 @endif
             </div>
 
-            <h1 class="login-message">Hoy es un gran dia para volver a intentarlo.</h1>
+            <h1 class="login-message">Hoy es un gran día para volver a intentarlo.</h1>
         </div>
 
         <div class="login-form-panel">
@@ -36,7 +36,7 @@
                     @csrf
 
                     <div class="login-field login-field-primary">
-                        <label for="email">Correo electronico</label>
+                        <label for="email">Correo electrónico</label>
                         <input id="email" name="email" type="email" value="{{ old('email') }}" required autocomplete="username">
                         <p class="login-meta">Usa el correo oficial de Puerta Principal.</p>
                         @error('email')
@@ -45,9 +45,9 @@
                     </div>
 
                     <div class="login-field">
-                        <label for="password">Contrasena</label>
+                        <label for="password">Contraseña</label>
                         <input id="password" name="password" type="password" required autocomplete="current-password">
-                        <p class="login-meta">Tu acceso cuenta con proteccion adicional para mayor seguridad.</p>
+                        <p class="login-meta">Tu acceso cuenta con protección adicional para mayor seguridad.</p>
                         @error('password')
                             <div class="meta field-error">{{ $message }}</div>
                         @enderror
