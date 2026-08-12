@@ -2,7 +2,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Métricas operativas"
-            subtitle="Control real del equipo por agente, con actividad del periodo, avance actual del pipeline y recordatorios operativos vencidos."
+            subtitle="Control real del equipo por agente, con actividad del período, avance actual del pipeline y recordatorios operativos vencidos."
         >
             <x-slot:actions>
                 <form method="GET" action="{{ route('metrics.index') }}" style="display: flex; align-items: end; gap: 12px; flex-wrap: wrap;">
@@ -40,7 +40,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Resumen actual del pipeline visible"
-            subtitle="Vista rápida del inventario visible para el rol autenticado y el periodo seleccionado."
+            subtitle="Vista rápida del inventario visible para el rol autenticado y el período seleccionado."
         />
         <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
             @foreach ($statusRows as $row)
@@ -57,7 +57,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Tabla operativa por agente"
-            subtitle="Actividad por agente con llamadas, trabajo del periodo, recordatorios pendientes vencidos, resultados y estado actual del pipeline."
+            subtitle="Actividad por agente con llamadas, trabajo del período, recordatorios pendientes vencidos, resultados y estado actual del pipeline."
         />
         <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 20px; background: var(--panel);">
             <table style="min-width: 1500px;">
@@ -123,7 +123,7 @@
     <x-ui.card>
         <x-ui.page-header
             title="Resumen de resultados"
-            subtitle="Resultados por agente y por estado para el periodo seleccionado."
+            subtitle="Resultados por agente y por estado para el período seleccionado."
         />
 
         <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 20px; background: var(--panel);">
