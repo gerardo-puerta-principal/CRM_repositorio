@@ -49,7 +49,7 @@
                                     @if (auth()->id() !== $userModel->id && $userModel->role !== \App\Models\User::ROLE_SUPER_ADMIN && $userModel->is_active)
                                         <form method="POST" action="{{ route('users.impersonate', $userModel) }}">
                                             @csrf
-                                            <button type="submit" style="border: 0; background: transparent; color: var(--primary-dark); font-weight: 600; cursor: pointer; padding: 0;">Entrar</button>
+                                            <button type="submit" title="Entrar como {{ $userModel->name }}" aria-label="Entrar como {{ $userModel->name }}" style="border: 0; background: transparent; color: var(--primary-dark); font-weight: 600; cursor: pointer; padding: 0;">Entrar</button>
                                         </form>
                                     @endif
                                 </div>
