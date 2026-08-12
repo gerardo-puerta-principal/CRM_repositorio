@@ -6,7 +6,7 @@ return [
     'import_max_rows' => 5000,
     'import_target_fields' => [
         'name' => 'Nombre',
-        'phone' => 'Telefono',
+        'phone' => 'Teléfono',
         'email' => 'Email',
         'city' => 'Ciudad',
         'type' => 'Tipo',
@@ -14,11 +14,11 @@ return [
     ],
     'import_header_aliases' => [
         'name' => ['name', 'nombre', 'nombre completo', 'lead', 'cliente', 'prospecto', 'contacto'],
-        'phone' => ['phone', 'telefono', 'tel', 'cel', 'celular', 'movil', 'mobile', 'whatsapp', 'numero'],
-        'email' => ['email', 'correo', 'correo electronico', 'mail', 'e-mail'],
-        'city' => ['city', 'ciudad', 'municipio', 'ubicacion', 'localidad'],
+        'phone' => ['phone', 'telefono', 'tel', 'cel', 'celular', 'movil', 'mobile', 'whatsapp', 'numero', 'número', 'número de teléfono', 'número de movil', 'número de celular'],
+        'email' => ['email', 'correo', 'correo electronico', 'correo electrónico', 'mail', 'e-mail', 'correo electrónico (principal)'],
+        'city' => ['city', 'ciudad', 'municipio', 'ubicacion', 'ubicación', 'localidad'],
         'type' => ['type', 'tipo', 'producto', 'servicio', 'categoria'],
-        'source' => ['source', 'origen', 'fuente', 'canal', 'campaign', 'campana', 'medio'],
+        'source' => ['source', 'origen', 'fuente', 'canal', 'campaign', 'campana', 'campaña', 'medio'],
     ],
     'lead_statuses' => [
         'Nuevo',
